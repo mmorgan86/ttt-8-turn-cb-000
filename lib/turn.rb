@@ -10,8 +10,8 @@ def display_board(board)
 end
 
 # converts user input to a integer
-def input_to_index(index)
-  index = index.to_i - 1
+def input_to_index(input)
+  index = input.to_i - 1
 end
 
 # finds out if a position is taken on the board
@@ -41,7 +41,7 @@ end
 def turn(board)
   puts "Please enter 1-9:"
   index = gets.chomp.to_i - 1
-  input_to_index(index)
+  index = input_to_index(input)
   if valid_move?(board, index) == true
     move(board, index, value ="X")
   else
